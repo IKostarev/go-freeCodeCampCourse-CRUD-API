@@ -19,8 +19,8 @@ type Movie struct {
 }
 
 type Director struct {
-	firstName string `json:"first_name"`
-	lastName  string `json:"last_name"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
 }
 
 var movies []Movie
@@ -106,14 +106,14 @@ func main() {
 		ID:       "1",
 		Isbn:     "438227",
 		Title:    "Movie One",
-		Director: &Director{firstName: "John", lastName: "Sit"},
+		Director: &Director{FirstName: "John", LastName: "Sit"},
 	})
 
 	movies = append(movies, Movie{
 		ID:       "2",
 		Isbn:     "45455",
 		Title:    "Movie Two",
-		Director: &Director{firstName: "Steve", lastName: "Smith"},
+		Director: &Director{FirstName: "Steve", LastName: "Smith"},
 	})
 
 	r.HandleFunc("/movies", getMovies).Methods("GET")
